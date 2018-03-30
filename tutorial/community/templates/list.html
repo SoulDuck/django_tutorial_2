@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Html </title>
+
+</head>
+<body>
+list<br/>
+제목 | 이름 | 날짜 <br/>
+{% for article in articleList %}
+
+
+<a href="/view/{{article.id}}">{{ article.title }} </a>>| {{article.name}} | {{article.cdate|date:"D d M y"}}<br/>
+{% endfor %}
+</body>
+</html>
