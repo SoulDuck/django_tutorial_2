@@ -16,9 +16,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from community.views import *
+from django.conf.urls.static import static
+import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^write/', write , name = 'write'),
     url(r'^list/' , list , name = 'list'),
     url(r'^view/(?P<num>[0-9]+)/$' ,view ),
-]
+    url(r'^upload' , upload_file)
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+print urlpatterns
+

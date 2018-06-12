@@ -7,3 +7,12 @@ class Form(ModelForm):
         model = Article
         fields=['name', 'title' , 'contents', 'url','email']
 
+class UploadForm(ModelForm):
+    class Meta:
+        model = UploadFile
+        fields = ['title' , 'file']
+    def __init__(self , *args , **kwargs):
+        super(ModelForm , self).__init__(*args, **kwargs)
+        print 'a'
+        print self.fields
+        self.fields['file'].required = False

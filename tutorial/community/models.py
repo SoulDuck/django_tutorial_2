@@ -14,3 +14,8 @@ class Article(models.Model):
     email = models.EmailField()
     cdate = models.DateTimeField(auto_now_add=True)
 
+class UploadFile(models.Model):
+    title = models.TextField(default='')
+    file = models.FileField(null=True )#, upload_to='media'
+
+
